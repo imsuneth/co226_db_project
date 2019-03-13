@@ -1,4 +1,6 @@
 import datetime
+import requests
+import numpy as np
 
 import cv2
 import sys
@@ -9,7 +11,8 @@ from PyQt5.uic import loadUi
 from PyQt5.uic.properties import QtCore
 from PyQt5 import QtCore
 from ModelDataRetrieve import *
-
+from commandLine import *
+from Tables import *
 
 class DataOutput(QDialog):
     def __init__(self):
@@ -64,9 +67,9 @@ class DataOutput(QDialog):
             self.blood.setText(getBloodGroup(EnteredVehicleNumber))
 
             toDay = str(datetime.datetime.now().strftime("%Y-%m-%d"))
-            currentTime=datetime.datetime.now().time()
-            from_=str(self.location.currentText())
-            populateRecords(EnteredVehicleNumber,toDay,currentTime,from_)
+            currentTime = datetime.datetime.now().time()
+            from_ = str(self.location.currentText())
+            populateRecords(EnteredVehicleNumber, toDay, currentTime, from_)
 
 
 
@@ -74,16 +77,31 @@ class DataOutput(QDialog):
             self.checkVehicleNumb.setText("In-Valid Number")
 
     def getVehicleNumberInput(self):
+        #return str(self.getNumber.text())
         return str(self.vehicleNumbInput.text())
+
+    def newCamer(self):
+        while (True):
+            #url = "http://192.168.8.100:8080/shot.jpg"
+
+            img_resp = requests.get(url)
+            img_arr = np.array(bytearray(img_resp.content), dtype=np.uint8)
+            img = cv2.imdecode(img_arr, -1)
+            cv2.imwrite(filename='img2.png', img=img)
+            # cv2.imshow("cam", img)
+
+            break
+
 
     def capturePhoto(self):
         cam = cv2.VideoCapture(0)
         frame = cam.read()[1]
-        cv2.imwrite(filename='img2.jpg', img=frame)
+        cv2.imwrite(filename='img2.png', img=frame)
 
     def loadimage(self):
-        self.capturePhoto()
-        self.loadImage('img2.jpg')
+        #self.capturePhoto()
+        self.newCamer()
+        self.loadImage('img2.png')
 
     def loadImage(self, fname):
         self.image = cv2.imread(fname)
@@ -102,6 +120,9 @@ class DataOutput(QDialog):
 
         self.imagelabel.setPixmap(QPixmap.fromImage(img))
         self.imagelabel.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        #self.commandlineHandle()
+        print("now commandline stage")
+        self.getNumber.setText(commandlineHandle())
 
 
 app = QApplication(sys.argv)
