@@ -72,7 +72,7 @@
    <property name="geometry">
     <rect>
      <x>288</x>
-     <y>433</y>
+     <y>503</y>
      <width>143</width>
      <height>23</height>
     </rect>
@@ -90,7 +90,7 @@
    <property name="geometry">
     <rect>
      <x>288</x>
-     <y>470</y>
+     <y>540</y>
      <width>162</width>
      <height>23</height>
     </rect>
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>288</x>
-     <y>510</y>
+     <y>580</y>
      <width>133</width>
      <height>23</height>
     </rect>
@@ -126,7 +126,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>470</y>
+     <y>540</y>
      <width>221</width>
      <height>25</height>
     </rect>
@@ -139,7 +139,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>510</y>
+     <y>580</y>
      <width>221</width>
      <height>25</height>
     </rect>
@@ -220,7 +220,7 @@
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>340</y>
+     <y>410</y>
      <width>141</width>
      <height>17</height>
     </rect>
@@ -267,7 +267,7 @@
    <property name="geometry">
     <rect>
      <x>590</x>
-     <y>300</y>
+     <y>370</y>
      <width>81</width>
      <height>21</height>
     </rect>
@@ -279,10 +279,10 @@
   <widget class="QLabel" name="imagelabel">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>200</x>
      <y>70</y>
-     <width>441</width>
-     <height>221</height>
+     <width>551</width>
+     <height>291</height>
     </rect>
    </property>
    <property name="font">
@@ -320,7 +320,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>330</y>
+     <y>400</y>
      <width>141</width>
      <height>27</height>
     </rect>
@@ -330,7 +330,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>370</y>
+     <y>440</y>
      <width>97</width>
      <height>27</height>
     </rect>
@@ -343,7 +343,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>330</y>
+     <y>400</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -523,7 +523,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>430</y>
+     <y>500</y>
      <width>221</width>
      <height>25</height>
     </rect>
@@ -535,7 +535,7 @@
   <widget class="QPushButton" name="nextButton">
    <property name="geometry">
     <rect>
-     <x>636</x>
+     <x>1051</x>
      <y>560</y>
      <width>131</width>
      <height>41</height>
@@ -556,7 +556,7 @@
   <widget class="QComboBox" name="location">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>935</x>
      <y>570</y>
      <width>101</width>
      <height>21</height>
@@ -586,7 +586,7 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>425</x>
+     <x>840</x>
      <y>570</y>
      <width>81</width>
      <height>21</height>
@@ -594,6 +594,29 @@
    </property>
    <property name="text">
     <string>ENTRANCE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="getNumber">
+   <property name="geometry">
+    <rect>
+     <x>295</x>
+     <y>430</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Mono CJK JP</family>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>DETECTED </string>
    </property>
   </widget>
   <zorder>label_2</zorder>
@@ -627,6 +650,7 @@
   <zorder>nextButton</zorder>
   <zorder>location</zorder>
   <zorder>label_12</zorder>
+  <zorder>getNumber</zorder>
  </widget>
  <tabstops>
   <tabstop>textBrowser_2</tabstop>
